@@ -6,7 +6,7 @@ export default {
 		console.log('pathp:' + pathp);
 		const addrPath = url.pathname.replace(/^\/|\/$/g, '');
 		console.log('addrPath:' + addrPath);
-		const newUrl = new URL('https://' + addrPath);
+		const newUrl = new URL('https://' + addrPath)+ url.search + url.hash;
 		console.log('newUrl:' + newUrl);
 		return fetch(new Request(newUrl, request));
 	}
